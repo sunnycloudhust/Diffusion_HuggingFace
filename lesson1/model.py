@@ -40,7 +40,7 @@ print("Start training")
 for epoch in range(epochs):
     for step, batch in enumerate(train_dataloader):
         clean_images = batch["images"].to(device)
-        
+        lenloader = len(train_dataloader)
         # 2. Tạo nhiễu ngẫu nhiên (noise) có cùng kích thước với batch ảnh
         noise = torch.randn_like(clean_images)
         
@@ -62,7 +62,7 @@ for epoch in range(epochs):
         optimizer.zero_grad()
 
         if step % 10 == 0:
-            print(f"Epoch {epoch} | Step {step} | Loss: {loss.item():.4f}")
+            print(f"Epoch {epoch+1} | Batch {step}/{lenloader } | Step {step+1}| Loss: {loss.item():.4f}")
 
 print("Training completed!")
 model.save_pretrained("lesson1")
