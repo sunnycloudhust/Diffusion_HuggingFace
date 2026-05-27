@@ -18,7 +18,6 @@ __pycache__/
 *.pt
 *.pth
 *.bin
-*.safetensors
 *.ckpt
 checkpoint-*/
 my_cifar10_unet/
