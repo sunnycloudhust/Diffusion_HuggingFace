@@ -1,1 +1,1 @@
-## This is the repository used for the purpose of famialiarizing with diffuser library
+## This is the repository used for the purpose of familiarizing with diffuser library
