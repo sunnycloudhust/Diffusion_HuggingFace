@@ -3,7 +3,7 @@ from diffusers import UNet2DModel, DDPMScheduler
 import torch.nn.functional as F
 from data import train_dataloader
 
-device = "cuda" if torch.cuda.is_availble() else "cpu"
+device = "cuda" if torch.cuda.is_available() else "cpu"
 model = UNet2DModel(
     sample_size=32,
     in_channels=3,
@@ -63,3 +63,6 @@ for epoch in range(epochs):
 
         if step % 10 == 0:
             print(f"Epoch {epoch} | Step {step} | Loss: {loss.item():.4f}")
+
+print("Training completed!")
+model.save_pretrained("lesson1")
